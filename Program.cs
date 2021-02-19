@@ -1,25 +1,35 @@
 ﻿using System;
 
-namespace Car
+namespace Дефиниране_на_прост_клас___правоъгълник
 {
     class Program
     {
-        public class Car
+        class Rectangle
         {
-            public string brand;
-            public string model;
-            public int engineVolume;
-            public int yearProd;
+            public double a;
+            public double b;
+            public double FaceSolving()
+            {
+                return a * b;
+            }
+            public double PerimeterSolving()
+            {
+                return 2 * a + 2 * b;
+            }
         }
         static void Main(string[] args)
         {
-            Car myCar = new Car();
-            myCar.brand = "FlyingCar";
-            myCar.model = "Mark1";
-            myCar.engineVolume = 3000;
-            myCar.yearProd = 2020;
-            Console.Write(myCar.brand + "," + myCar.model +",");
-            Console.WriteLine(myCar.engineVolume + "," + myCar.yearProd + ",");
+            Rectangle A = new Rectangle();
+            Console.Write("a = ");
+            A.a = double.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            A.b = double.Parse(Console.ReadLine());
+            double rectangleFace;
+            rectangleFace = A.FaceSolving();
+            Console.WriteLine("Face: " + Math.Round(rectangleFace, 2));
+            double rectanglePerimeter;
+            rectanglePerimeter = A.PerimeterSolving();
+            Console.WriteLine("Perimeter: " + Math.Round(rectanglePerimeter, 2));
             Console.ReadLine();
         }
     }
